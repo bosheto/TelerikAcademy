@@ -1,2 +1,4 @@
-package core3;public class task {
+package core3;
+
+public class task {
 }
