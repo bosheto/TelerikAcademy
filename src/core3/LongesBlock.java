@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class LongesBlock {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine().strip();
+        String input = scanner.nextLine();
 
         String longestSequence = "";
         String sequence = "";
@@ -16,12 +16,14 @@ public class LongesBlock {
                if(sequence.length() == 0)
                    sequence += input.charAt(i-1);
                sequence += input.charAt(i);
-           }else{
-               if(sequence.length() > longestSequence.length())
-                   longestSequence = sequence;
-               sequence =  "";
+           }else {
+               sequence = "";
            }
+            if (sequence.length() > longestSequence.length())
+                longestSequence = sequence;
         }
+        if(longestSequence.isEmpty())
+            longestSequence += input.charAt(0);
         System.out.println(longestSequence);
     }
 }
